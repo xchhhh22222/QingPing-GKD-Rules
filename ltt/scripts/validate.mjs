@@ -8,7 +8,7 @@ const check=(rows,name)=>{
  for(let i=0;i<rows.length;i++){
   const e=Object.entries(rows[i]);
   if(e.length!==1)throw new Error(name+' row '+i+' must have one hashed key');
-  const [key,json]=e[0];if(!/^-?\\d+$/.test(key)||ids.has(key))throw new Error(name+' invalid/duplicate key '+key);
+  const [key,json]=e[0];if(!/^-?\d+$/.test(key)||ids.has(key))throw new Error(name+' invalid/duplicate key '+key);
   ids.add(key);
   if(typeof json!=='string')throw new Error(name+' rule must be JSON string '+key);
   const obj=JSON.parse(json);if(!obj||Array.isArray(obj)||typeof obj!=='object')throw new Error(name+' invalid rule '+key);
