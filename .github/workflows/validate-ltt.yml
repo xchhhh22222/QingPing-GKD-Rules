@@ -1,0 +1,21 @@
+name: Validate LiTiaotiao Rules
+
+on:
+  push:
+    paths:
+      - 'ltt/**'
+      - '.github/workflows/validate-ltt.yml'
+  workflow_dispatch:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: '24'
+      - name: Validate native LiTiaotiao rules and JSON strings
+        run: node ltt/scripts/validate.mjs

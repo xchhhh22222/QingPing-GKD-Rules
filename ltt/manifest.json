@@ -1,0 +1,83 @@
+{
+  "title": "Necy 李跳跳 2.2 规则维护",
+  "revision": 1,
+  "created": "2026-10-23",
+  "source": {
+    "repo": "743859910/LiTiaoTiao_Custom_Rules",
+    "file": "LiTiaotiao_Custom_Rules.txt",
+    "revision": "88e32728b891c3a15ea8eb2afdd5d10efb70e6fd",
+    "license": "MIT"
+  },
+  "sourceRecords": 328,
+  "correctedSyntax": [
+    {
+      "hash": "-1031558479",
+      "index": 32,
+      "reason": "removed trailing comma immediately before ]"
+    },
+    {
+      "hash": "-1667428321",
+      "index": 79,
+      "reason": "removed trailing comma immediately before ]"
+    },
+    {
+      "hash": "-612834190",
+      "index": 177,
+      "reason": "removed trailing comma immediately before ]"
+    },
+    {
+      "hash": "1994036591",
+      "index": 280,
+      "reason": "removed trailing comma immediately before ]"
+    }
+  ],
+  "baselineRecords": 328,
+  "browserPatchRecords": 3,
+  "mergedRecords": 330,
+  "browserPatches": [
+    {
+      "pkg": "com.tencent.mtt",
+      "id": "-103524201",
+      "name": "QQ 浏览器",
+      "keywords_append": [
+        "跳过 3",
+        "跳过3",
+        "跳过 2",
+        "跳过2",
+        "跳过 1",
+        "跳过1"
+      ],
+      "verifiedOnDevice": false
+    },
+    {
+      "pkg": "com.hihonor.baidu.browser",
+      "id": "1291563139",
+      "name": "荣耀自带浏览器（百度定制版）",
+      "keywords_append": [
+        "跳过 3",
+        "跳过3",
+        "跳过 2",
+        "跳过2",
+        "跳过 1",
+        "跳过1",
+        "跳过广告"
+      ],
+      "verifiedOnDevice": false
+    },
+    {
+      "pkg": "com.honor.browser",
+      "id": "-1283234825",
+      "name": "荣耀浏览器（新版）",
+      "keywords_append": [
+        "跳过 3",
+        "跳过3",
+        "跳过 2",
+        "跳过2",
+        "跳过 1",
+        "跳过1",
+        "跳过广告"
+      ],
+      "verifiedOnDevice": false
+    }
+  ]
+}
