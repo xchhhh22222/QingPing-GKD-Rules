@@ -1,7 +1,7 @@
 {
   "id": 20261023,
   "name": "Necy GKD · 开屏与广告补充（谨慎版）",
-  "version": 2,
+  "version": 3,
   "author": "Necy",
   "supportUri": "https://github.com/xchhhh22222/QingPing/tree/main/gkd",
   "checkUpdateUrl": "./necy-gkd.version.json5",
@@ -959,6 +959,46 @@
       ]
     },
     {
+      "id": "com.hihonor.baidu.browser",
+      "name": "荣耀自带浏览器（百度定制版）",
+      "groups": [
+        {
+          "key": 100,
+          "name": "开屏广告（荣耀浏览器补漏）",
+          "desc": "定向开屏广告补漏；只在 APP 启动后的前 10 秒检查，最多执行 1 次。部分规则由社区快照支持，倒计时补漏规则尚未在当前手机快照验证。",
+          "enable": true,
+          "fastQuery": true,
+          "matchTime": 10000,
+          "resetMatch": "app",
+          "actionMaximum": 1,
+          "priorityTime": 10000,
+          "actionCd": 1200,
+          "rules": [
+            {
+              "key": 0,
+              "matches": "@[text*=\"跳过\"][clickable=true] <n LinearLayout[childCount>1] +2 [text=\"广告\"]",
+              "snapshotUrls": "https://i.gkd.li/i/32739487"
+            },
+            {
+              "key": 1,
+              "matches": "@[clickable=true][visibleToUser=true][width<500 && height<300] > [text~=\"^跳过 ?[0-9]{0,2}$\"]",
+              "action": "clickCenter"
+            },
+            {
+              "key": 2,
+              "matches": "[text~=\"^跳过 ?[0-9]{0,2}$\"][visibleToUser=true][width<500 && height<300]",
+              "action": "clickCenter"
+            },
+            {
+              "key": 3,
+              "matches": "[desc~=\"^跳过 ?[0-9]{0,2}$\"][visibleToUser=true][width<500 && height<300]",
+              "action": "clickCenter"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "id": "com.hihonor.health",
       "name": "荣耀运动健康",
       "groups": [
@@ -1004,6 +1044,41 @@
                 "com.hihonor.phoneservice.OpenScreenAdActivity"
               ],
               "key": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "com.honor.browser",
+      "name": "荣耀浏览器（新版）",
+      "groups": [
+        {
+          "key": 100,
+          "name": "开屏广告（荣耀新版试验）",
+          "desc": "荣耀官方确认此包名存在，但未取得当前新版浏览器的 GKD 快照；该组默认关闭，确认使用此浏览器时再手动启用。",
+          "enable": false,
+          "fastQuery": true,
+          "matchTime": 10000,
+          "resetMatch": "app",
+          "actionMaximum": 1,
+          "priorityTime": 10000,
+          "actionCd": 1200,
+          "rules": [
+            {
+              "key": 0,
+              "matches": "@[clickable=true][visibleToUser=true][width<500 && height<300] > [text~=\"^跳过 ?[0-9]{0,2}$\"]",
+              "action": "clickCenter"
+            },
+            {
+              "key": 1,
+              "matches": "[text~=\"^跳过 ?[0-9]{0,2}$\"][visibleToUser=true][width<500 && height<300]",
+              "action": "clickCenter"
+            },
+            {
+              "key": 2,
+              "matches": "[desc~=\"^跳过 ?[0-9]{0,2}$\"][visibleToUser=true][width<500 && height<300]",
+              "action": "clickCenter"
             }
           ]
         }
@@ -1104,6 +1179,32 @@
                 "com.huawei.android.totemweather.composite.MarketCompositeActivity"
               ],
               "key": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "com.huawei.browser",
+      "name": "华为浏览器（兼容）",
+      "groups": [
+        {
+          "key": 100,
+          "name": "开屏广告（华为浏览器兼容）",
+          "desc": "仅供检查到包名 com.huawei.browser 的设备启用；荣耀自带浏览器更可能使用 com.hihonor.baidu.browser。",
+          "enable": false,
+          "fastQuery": true,
+          "matchTime": 10000,
+          "resetMatch": "app",
+          "actionMaximum": 1,
+          "priorityTime": 10000,
+          "actionCd": 1200,
+          "rules": [
+            {
+              "key": 0,
+              "matches": "[text*=\"跳过\"][text.length<10][width<500 && height<300][visibleToUser=true]",
+              "action": "clickCenter",
+              "snapshotUrls": "https://i.gkd.li/i/13403785"
             }
           ]
         }
@@ -2053,6 +2154,46 @@
                 "com.sinovatech.unicom.basic.ui.activity.MainActivity"
               ],
               "key": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "com.tencent.mtt",
+      "name": "QQ浏览器",
+      "groups": [
+        {
+          "key": 100,
+          "name": "开屏广告（QQ浏览器补漏）",
+          "desc": "定向开屏广告补漏；只在 APP 启动后的前 10 秒检查，最多执行 1 次。部分规则由社区快照支持，倒计时补漏规则尚未在当前手机快照验证。",
+          "enable": true,
+          "fastQuery": true,
+          "matchTime": 10000,
+          "resetMatch": "app",
+          "actionMaximum": 1,
+          "priorityTime": 10000,
+          "actionCd": 1200,
+          "rules": [
+            {
+              "key": 0,
+              "matches": "@LinearLayout[clickable=true] > TextView[text=\"跳过\"]",
+              "snapshotUrls": "https://i.gkd.li/i/12472630"
+            },
+            {
+              "key": 1,
+              "matches": "@[clickable=true][visibleToUser=true][width<500 && height<300] > [text~=\"^跳过 ?[0-9]{0,2}$\"]",
+              "action": "clickCenter"
+            },
+            {
+              "key": 2,
+              "matches": "[text~=\"^跳过 ?[0-9]{0,2}$\"][visibleToUser=true][width<500 && height<300]",
+              "action": "clickCenter"
+            },
+            {
+              "key": 3,
+              "matches": "[desc~=\"^跳过 ?[0-9]{0,2}$\"][visibleToUser=true][width<500 && height<300]",
+              "action": "clickCenter"
             }
           ]
         }
